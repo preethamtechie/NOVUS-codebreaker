@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVUS // CODE BREAKER</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="scanlines"></div>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <div class="logo">
+            <span class="logo-symbol">◈</span>
+            <div>
+                <h2>NOVUS</h2>
+                <small>CODE BREAKER</small>
+            </div>
+        </div>
+
+        <div class="event-status">
+            <span class="status-dot"></span>
+            SYSTEM ONLINE
+        </div>
+
+        <div class="timer">
+            <span>TIME LEFT</span>
+            <strong id="timer">30:00</strong>
+        </div>
+
+    </header>
+
+
+    <!-- MAIN LAYOUT -->
+    <main class="main-container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="terminal-title">
+                <span>root@novus:~$</span>
+            </div>
+
+            <div class="club-name">
+                <div class="glitch" data-text="NOVUS">NOVUS</div>
+                <p>CODING CLUB</p>
+            </div>
+
+            <div class="menu-title">
+                CHALLENGES
+            </div>
+
+            <div class="challenge-menu">
+
+                <button class="menu-item active" onclick="selectChallenge(0)">
+                    <span class="file-icon html">HTML</span>
+                    HTML // 01
+                    <span class="difficulty easy">EASY</span>
+                </button>
+
+                <button class="menu-item" onclick="selectChallenge(1)">
+                    <span class="file-icon html">HTML</span>
+                    HTML // 02
+                    <span class="difficulty medium">MEDIUM</span>
+                </button>
+
+                <button class="menu-item" onclick="selectChallenge(2)">
+                    <span class="file-icon css">CSS</span>
+                    CSS // 01
+                    <span class="difficulty medium">MEDIUM</span>
+                </button>
+
+                <button class="menu-item" onclick="selectChallenge(3)">
+                    <span class="file-icon js">JS</span>
+                    JS // 01
+                    <span class="difficulty hard">HARD</span>
+                </button>
+
+            </div>
+
+
+            <div class="score-box">
+
+                <p>YOUR SCORE</p>
+
+                <h1 id="score">000</h1>
+
+                <div class="progress-bar">
+                    <div id="progress"></div>
+                </div>
+
+                <small id="progressText">0 / 4 COMPLETED</small>
+
+            </div>
+
+
+            <div class="terminal-status">
+
+                <p>> connection_status</p>
+                <span>● SECURE</span>
+
+                <p>> player_status</p>
+                <span>● ACTIVE</span>
+
+                <p>> server</p>
+                <span>● NOVUS_MAIN</span>
+
+            </div>
+
+        </aside>
+
+
+        <!-- CONTENT -->
+        <section class="content">
+
+            <!-- HERO -->
+            <section class="hero">
+
+                <div class="hero-small">
+                    // NOVUS CODING CLUB PRESENTS
+                </div>
+
+                <h1>
+                    CODE
+                    <span>BREAKER</span>
+                </h1>
+
+                <p>
+                    FIND THE BUG. FIX THE CODE. CLAIM THE GLORY.
+                </p>
+
+                <div class="hero-line"></div>
+
+                <div class="event-info">
+                    <span>◈ 4 FILES</span>
+                    <span>◈ MULTIPLE BUGS</span>
+                    <span>◈ ONE CHAMPION</span>
+                </div>
+
+            </section>
+
+
+            <!-- CHALLENGE GRID -->
+            <section class="challenge-section">
+
+                <div class="section-heading">
+                    <div>
+                        <span>// AVAILABLE MISSIONS</span>
+                        <h2>SELECT YOUR TARGET</h2>
+                    </div>
+
+                    <div class="live">
+                        ● LIVE EVENT
+                    </div>
+                </div>
+
+
+                <div class="challenge-grid">
+
+
+                    <!-- HTML 01 -->
+                    <div class="challenge-card active-card">
+
+                        <div class="card-top">
+                            <span class="number">01</span>
+                            <span class="language html-text">HTML</span>
+                        </div>
+
+                        <h3>HTML // 01</h3>
+
+                        <p>
+                            Locate and repair the hidden HTML syntax errors.
+                        </p>
+
+                        <div class="card-info">
+                            <span>BUGS: 6</span>
+                            <span>+100 PTS</span>
+                        </div>
+
+                        <button onclick="openChallenge(0)">
+                            START CHALLENGE
+                            <span>→</span>
+                        </button>
+
+                    </div>
+
+
+                    <!-- HTML 02 -->
+                    <div class="challenge-card">
+
+                        <div class="card-top">
+                            <span class="number">02</span>
+                            <span class="language html-text">HTML</span>
+                        </div>
+
+                        <h3>HTML // 02</h3>
+
+                        <p>
+                            Debug a broken college webpage and restore it.
+                        </p>
+
+                        <div class="card-info">
+                            <span>BUGS: 5</span>
+                            <span>+150 PTS</span>
+                        </div>
+
+                        <button onclick="openChallenge(1)">
+                            START CHALLENGE
+                            <span>→</span>
+                        </button>
+
+                    </div>
+
+
+                    <!-- CSS -->
+                    <div class="challenge-card">
+
+                        <div class="card-top">
+                            <span class="number">03</span>
+                            <span class="language css-text">CSS</span>
+                        </div>
+
+                        <h3>CSS // 01</h3>
+
+                        <p>
+                            Repair the stylesheet and bring the interface back online.
+                        </p>
+
+                        <div class="card-info">
+                            <span>BUGS: 4</span>
+                            <span>+200 PTS</span>
+                        </div>
+
+                        <button onclick="openChallenge(2)">
+                            START CHALLENGE
+                            <span>→</span>
+                        </button>
+
+                    </div>
+
+
+                    <!-- JAVASCRIPT -->
+                    <div class="challenge-card">
+
+                        <div class="card-top">
+                            <span class="number">04</span>
+                            <span class="language js-text">JS</span>
+                        </div>
+
+                        <h3>JS // 01</h3>
+
+                        <p>
+                            Hunt down the logic errors hiding inside the script.
+                        </p>
+
+                        <div class="card-info">
+                            <span>BUGS: 5</span>
+                            <span>+300 PTS</span>
+                        </div>
+
+                        <button onclick="openChallenge(3)">
+                            START CHALLENGE
+                            <span>→</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <!-- CODE EDITOR MODAL -->
+
+    <div class="editor-overlay" id="editorOverlay">
+
+        <div class="editor-window">
+
+            <div class="editor-header">
+
+                <div class="window-buttons">
+                    <span class="red"></span>
+                    <span class="yellow"></span>
+                    <span class="green"></span>
+                </div>
+
+                <div id="fileTitle">
+                    HTML_01.html
+                </div>
+
+                <button onclick="closeEditor()">×</button>
+
+            </div>
+
+
+            <div class="editor-body">
+
+                <!-- FILE EXPLORER -->
+                <div class="explorer">
+
+                    <h4>EXPLORER</h4>
+
+                    <p>📁 NOVUS</p>
+
+                    <div class="files">
+
+                        <div class="file selected">
+                            <span>▣</span> HTML_01.html
+                        </div>
+
+                        <div class="file">
+                            <span>▣</span> HTML_02.html
+                        </div>
+
+                        <div class="file">
+                            <span>▣</span> CSS_01.css
+                        </div>
+
+                        <div class="file">
+                            <span>▣</span> JS_01.js
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CODE AREA -->
+                <div class="code-area">
+
+                    <div class="editor-tabs">
+                        <span id="tabName">HTML_01.html</span>
+                    </div>
+
+                    <div class="code-content">
+
+                        <div class="line-numbers">
+                            01<br>
+                            02<br>
+                            03<br>
+                            04<br>
+                            05<br>
+                            06<br>
+                            07<br>
+                            08<br>
+                            09<br>
+                            10<br>
+                            11<br>
+                            12<br>
+                            13<br>
+                            14<br>
+                            15<br>
+                        </div>
+
+                        <textarea id="codeEditor" spellcheck="false"></textarea>
+
+                    </div>
+
+                    <div class="editor-footer">
+
+                        <span>Ln 01, Col 01</span>
+
+                        <span>UTF-8</span>
+
+                        <span>HTML</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="editor-actions">
+
+                <div class="hint">
+                    ⚠ FIND ALL ERRORS BEFORE SUBMITTING
+                </div>
+
+                <button class="run-btn" onclick="runCode()">
+                    ▶ RUN CODE
+                </button>
+
+                <button class="submit-btn" onclick="submitChallenge()">
+                    SUBMIT FIX
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SUCCESS POPUP -->
+
+    <div class="success-popup" id="successPopup">
+
+        <div class="success-box">
+
+            <div class="success-icon">✓</div>
+
+            <h2>CHALLENGE CLEARED</h2>
+
+            <p id="successMessage">
+                SYSTEM RESTORED.
+            </p>
+
+            <div class="points">
+                +100 POINTS
+            </div>
+
+            <button onclick="closeSuccess()">
+                CONTINUE
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+        <span>NOVUS // CODING CLUB</span>
+        <span>© 2026 ALL SYSTEMS OPERATIONAL</span>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
